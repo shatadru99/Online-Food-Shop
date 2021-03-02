@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+    <head>
+        
+        <title></title>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+        <style>
+            body{
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            img{
+                width:100px;
+                height:100px;
+                display: none;   
+            }
+            li{
+                list-style-type: none;
+            }
+            #viewer{
+                width:100vw;
+                height:400px;
+                margin:5px 5px 5px 0px;
+                text-align: center;
+                border: 5px solid red; 
+                background-color: #33ff7a;
+				color: black;
+				background:url('images/viewer/v4.jpg') no-repeat center center/cover;
+				background-size: 100% 100%;
+            }
+            #ff{
+				width: 100vw;
+				height: 10vh;
+                text-align: center;
+				margin-bottom: 0px;
+                background-color: #66e8ff;
+				<!--background-image: url('images/viewer/viewerBg.png');-->
+            }
+			#container4{
+				display: grid;
+				height: 40vh;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				margin-bottom: 5px;
+				justify-content: center;
+			}  
+			#row4{
+				width: 32vw;
+				height: 40vh;
+				border: 2px solid black;
+				background:url('images/viewer/bg1.jpg') no-repeat center center/cover; 
+				display: flex;
+				justify-content:center;
+				align-items:flex-end;
+				border-radius: 15px;
+				background-size: 100% 100%;
+			}
+			#row5{
+				width: 32vw;
+				height: 40vh;
+				border: 2px solid black;
+				background:url('images/viewer/bg2.png') no-repeat center center/cover;
+				display: flex;
+				justify-content:center;
+				align-items:flex-end;
+				border-radius: 15px;
+				background-size: 100% 100%;
+			}
+			#row6{
+				width: 32vw;
+				height: 40vh;
+				border: 2px solid black;
+				background:url('images/viewer/bg3.jpg') no-repeat center center/cover;
+				display: flex;
+				justify-content:center;
+				align-items:flex-end;
+				border-radius: 15px;
+				background-size: 100% 100%;
+			}
+			
+        </style>
+    </head>
+    <body>
+        <div id="container4">
+			<div id="row4">
+			</div>
+			<div id="row5">
+			</div>
+			<div id="row6">
+			</div>
+		</div>
+		<div id="ff">
+			<label for="name"><b>Design Name</b></label><br>
+            <input type="text" id="dname" name="dname"><br>
+            <button type="button" onclick="func1()">Submit</button>
+			<button type="button" onclick="f2()">View Food</button>
+        </div>
+        <ul>
+            <li><img src="images/menu/starters/starters1.jpg"  id="images/menu/starters/starters1"></li>
+            <li><img src="images/menu/starters/starters2.jpg"  id="images/menu/starters/starters2"></li>
+			<li><img src="images/menu/starters/starters3.jpg"  id="images/menu/starters/starters3"></li>
+			<li><img src="images/menu/starters/starters4.jpg"  id="images/menu/starters/starters4"></li>
+			<li><img src="images/menu/starters/starters5.jpg"  id="images/menu/starters/starters5"></li>
+            <li><img src="images/menu/starters/starters6.jpg"  id="images/menu/starters/starters6"></li>
+            <li><img src="images/menu/starters/starters7.jpg"  id="images/menu/starters/starters7"></li>
+            <li><img src="images/menu/starters/starters8.jpg"  id="images/menu/starters/starters8"></li>
+			<li><img src="images/menu/mainCourse/mainCourse1.jpg"  id="images/menu/mainCourse/mainCourse1"></li>
+			<li><img src="images/menu/mainCourse/mainCourse2.jpg"  id="images/menu/mainCourse/mainCourse2"></li>
+			<li><img src="images/menu/mainCourse/mainCourse3.jpg"  id="images/menu/mainCourse/mainCourse3"></li>
+			<li><img src="images/menu/mainCourse/mainCourse4.jpg"  id="images/menu/mainCourse/mainCourse4"></li>
+			<li><img src="images/menu/mainCourse/mainCourse5.jpg"  id="images/menu/mainCourse/mainCourse5"></li>
+			<li><img src="images/menu/mainCourse/mainCourse6.jpg"  id="images/menu/mainCourse/mainCourse6"></li>
+			<li><img src="images/menu/mainCourse/mainCourse7.jpg"  id="images/menu/mainCourse/mainCourse7"></li>
+			<li><img src="images/menu/mainCourse/mainCourse8.jpg"  id="images/menu/mainCourse/mainCourse8"></li>
+			<li><img src="images/menu/dessert/dessert1.jpg"  id="images/menu/dessert/dessert1"></li>
+			<li><img src="images/menu/dessert/dessert2.jpg"  id="images/menu/dessert/dessert2"></li>
+			<li><img src="images/menu/dessert/dessert3.jpg"  id="images/menu/dessert/dessert3"></li>
+			<li><img src="images/menu/dessert/dessert4.jpg"  id="images/menu/dessert/dessert4"></li>
+			<li><img src="images/menu/dessert/dessert5.jpg"  id="images/menu/dessert/dessert5"></li>
+			<li><img src="images/menu/dessert/dessert6.jpg"  id="images/menu/dessert/dessert6"></li>
+			<li><img src="images/menu/dessert/dessert7.jpg"  id="images/menu/dessert/dessert7"></li>
+			<li><img src="images/menu/dessert/dessert8.jpg"  id="images/menu/dessert/dessert8"></li>
+        </ul>
+        <div id="viewer">
+            <h3>View Your Buffet</h3>
+        </div>
+        
+        <script>
+            var x=''
+            var pp=''
+            var images=[]
+            function func1(){
+                x=document.getElementById("dname").value;
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/cgi-bin/retrieve.cgi',
+                    data: {"r":x},
+                    success: function(res) {
+						//alert(res);
+                        pp=res
+                },
+                error: function() {alert("did not work");}                  
+                })
+				alert("You can view your food")
+				}
+			function f2() {
+                console.log('\n')
+                pp=pp.split(',')[1]
+				//alert("ok");
+				//alert(pp);
+                parser = new DOMParser();
+                xmlDoc = parser.parseFromString(pp,"text/xml");
+                console.log("xml")
+                console.log(xmlDoc)
+                var b=document.getElementById("viewer");
+                var x1=b.getBoundingClientRect().left;
+                var y1=b.getBoundingClientRect().top;
+				console.log("viewer",x1,y1)
+                console.log(xmlDoc.getElementsByTagName("images")[0]);
+                var rr= xmlDoc.getElementsByTagName("images")
+                Array.from(rr).forEach(element => {
+                    id=element.childNodes[1].textContent.split('.')[0]
+                    x=parseFloat(element.childNodes[3].textContent)
+                    y=parseFloat(element.childNodes[5].textContent)
+					console.log("here");
+                    console.log(id,x,y)
+                    var ele=document.getElementById(id)
+                    ele.style.display="inline";
+                    ele.style.position = "absolute"; 
+                    ele.style.left = (x1+x) + 'px'; 
+                    ele.style.top = (y1+y) + 'px';
+                    
+                });
+
+            }
+
+        </script>
+    </body>
+</html>

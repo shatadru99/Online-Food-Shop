@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Editor</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+            
+        <style>
+            ul { color: white; list-style-type:none}
+            li{float: left;}
+            
+            .palette{
+                width:100%;
+                margin: auto;
+                height: 1200px;
+                margin: auto;
+<!--                 background-color:black; -->
+                color: aqua;
+                padding: 10px;
+                overflow:hidden;
+            }
+            body{
+                background-image: url("images/menu/menu_background.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+           .h2 {
+              margin: 0;
+           }
+		   .h3 {
+			  margin: 0px;
+		   }
+            .head{
+                width:100%;
+                height:60%;
+                margin: auto;
+                text-align: center;
+<!--                 border: 5px solid red; -->
+                margin-bottom: 50px;
+                
+
+            }
+            .flexx{
+                display: flex;
+                margin: auto;
+                width:100%;
+                height: 95%;
+            }
+            .board{
+                width:100%;
+                margin:auto;
+                text-align: center;
+                border: 5px solid red; 
+                height: 30%;
+            }
+            #Starters{      
+                width: 33%;
+<!--                 border: 5px solid yellow; -->
+                margin:0px 10px;
+                height: 90%;
+            }
+            #MainCourse {
+                width: 33%;
+<!--                 border: 5px solid yellow; -->
+                margin:0px 10px;
+                height: 90%;
+            }
+            #Dessert{
+                width: 33%;
+<!--                 border: 5px solid yellow; -->
+               margin:0px 10px;
+               height: 90%;
+            }
+<!--             #Foots{
+                width: 24%;
+                border: 5px solid yellow;
+                margin:10px;
+                padding: 10px;
+                
+
+            } -->
+            #footer{
+                text-align: center;
+                width: 30%;
+                margin: auto;
+                display: flex;
+                margin-top: 15px;
+            }
+            button{
+                margin: 10px;
+            }
+            button :hover{
+                cursor:pointer;
+            }
+            img {
+                width: 12vw;
+                height: 12vh;
+                margin: 2px;    
+            }
+            img:hover{
+                cursor: pointer;
+            }
+			figcaption {
+				color: black;
+			}
+            </style>
+            
+
+       
+   
+    </head>
+    <body>
+        <div class="palette">
+            <div class="head">
+              <h2>Our Menu</h2>  
+              <div class="flexx">
+                  <div id="Starters">
+                      <h2>STARTERS</h2>
+                  <ul>
+                  <li><img src="images/menu/starters/starters1.jpg" onclick="Saving(this)"><figcaption><b>Chicken Wings</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters2.jpg" onclick="Saving(this)"><figcaption><b>Crispy Chicken</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters3.jpg" onclick="Saving(this)"><figcaption><b>Grilled Chicken</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters4.jpg" onclick="Saving(this)"><figcaption><b>Chicken Knuggets</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters5.jpg" onclick="Saving(this)"><figcaption><b>Chicken Sticks</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters6.jpg" onclick="Saving(this)"><figcaption><b>Chicken Legs</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters7.jpg" onclick="Saving(this)"><figcaption><b>Chicken Extra Fried</b></figcaption></li>
+                  <li><img src="images/menu/starters/starters8.jpg" onclick="Saving(this)"><figcaption><b>Chicken Knuggets Ex Cheese</b></figcaption></li>
+                  </ul>
+                  </div>
+                  <div id="MainCourse">
+                      <h2>MAIN COURSE</h2>
+                  <ul>
+                  <li><img src="images/menu/mainCourse/mainCourse1.jpg" onclick="Saving(this)"><figcaption><b>Egg Chicken Noodles</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse2.jpg" onclick="Saving(this)"><figcaption><b>Chicken Biriyani</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse3.jpg" onclick="Saving(this)"><figcaption><b>Mutton Fried Rice</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse4.jpg" onclick="Saving(this)"><figcaption><b>Masala Dosa</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse5.jpg" onclick="Saving(this)"><figcaption><b>Chicken Kabab</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse6.jpg" onclick="Saving(this)"><figcaption><b>Chicken Gravy</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse7.jpg" onclick="Saving(this)"><figcaption><b>Egg Pasta</b></figcaption></li>
+                  <li><img src="images/menu/mainCourse/mainCourse8.jpg" onclick="Saving(this)"><figcaption><b>Egg Fried Rice</b></figcaption></li>
+                  </ul>
+                  </div>
+                  <div id="Dessert">
+                      <h2>DESSERT</h2>
+                   <ul>
+
+                  <li><img src="images/menu/dessert/dessert1.jpg" onclick="Saving(this)"><figcaption><b>Choco Muffins</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert2.jpg" onclick="Saving(this)"><figcaption><b>Choco Delight</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert3.jpg" onclick="Saving(this)"><figcaption><b>Choco Love</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert4.jpg" onclick="Saving(this)"><figcaption><b>Creamy Cookies</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert5.jpg" onclick="Saving(this)"><figcaption><b>Pastry</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert6.jpg" onclick="Saving(this)"><figcaption><b>Choco Ball</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert7.jpg" onclick="Saving(this)"><figcaption><b>Rumball</b></figcaption></li>
+                  <li><img src="images/menu/dessert/dessert8.jpg" onclick="Saving(this)"><figcaption><b>Choco Lava</b></figcaption></li>
+                  </ul>
+                  </div>
+  <!--                 <div id="Foots">
+                      <h2>LEGS</h2><br>
+                  <ul>
+                  <li><img src="https://pixabay.com/get/g2bd5b89dff03e9b4bbe77c86a2ce8248faad8cf85e24ad13bee80281248e6843f6c438acccd7152ef0e7ea16a074c05b_1920.jpg" onclick="Saving(this)"></li>
+                  <li><img src="feet1R.png" onclick="Saving(this)"></li> 
+                  <li><img src="feet2L.png" onclick="Saving(this)"></li>
+                  <li><img src="feet2R.png" onclick="Saving(this)"></li>
+                  <li><img src="feet3L.png" onclick="Saving(this)"></li>           
+                  <li><img src="feet3R.png" onclick="Saving(this)"></li>
+                  </ul>
+                  </div> -->
+              </div>
+                
+            </div>
+            <div class="board">
+                <h2>Your Buffet</h2>
+            </div>
+            <div id="footer">
+            <label>Enter the Buffet Name</label>
+            <input type="text" id="Design_Name"></input>
+            <button type="button" onclick="FinalSaving()" >Save</button>
+            <button type="button" onclick="PerlSubmit()">Submit</button>
+            </div>
+        </div>
+        
+        <script>
+            var arr=[];
+            var Dname='ll';
+            function Saving(e){
+                var b=document.body.getElementsByClassName("board")[0];
+                var x1=b.getBoundingClientRect().left;
+                var y1=b.getBoundingClientRect().top;
+                //arr.push(e.getBoundingClientRect()); 
+                const { x,y } = e.getBoundingClientRect();
+                var id1=e.getAttribute("src");
+                var obj={"id":[id1],"coordinates":[x-x1,y-y1]}
+                console.log(obj)
+				if(obj.coordinates[0]>=0 && obj.coordinates[1]>=0){         
+					arr.push(obj);
+				}
+				/*
+                var flag=-1
+                for (i=0;i<arr.length;i++){
+                    var {id}=arr[i]
+                    if(id==id1)
+                        flag=i
+                }
+                if(flag!=-1){  
+                    if(obj.coordinates[0]>10 && obj.coordinates[1]>10){         
+                        arr[flag]=obj;
+                    }
+                    else{
+                        arr.splice(flag, 1);
+                    }
+                }
+                else{
+
+                    if(obj.coordinates[0]>10 && obj.coordinates[1]>10){         
+                        arr.push(obj);
+                    }                
+                }*/
+
+			}
+            
+            function FinalSaving(){
+                console.log(arr);
+                Dname= document.getElementById("Design_Name").value;
+                console.log(Dname);
+            }
+            function PerlSubmit() {
+                final={"design_id":[Dname],"images":arr}
+                alert(Dname);
+                final1={"buffet":[final]}
+                console.log(final)
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/cgi-bin/code.cgi',
+                    data: {"r":JSON.stringify(final1)},
+
+                    success: function(res) {
+
+                        alert(res);
+
+                },
+                error: function() {alert("did not work");}                  
+                }).done(function (data) {
+                    console.log("DD")
+                }).fail(function (jqXHR, textStatus, error) {
+                // Handle error here
+                console.log(error)
+                });
+            }
+			$(function() {
+				var myElement = document.getElementsByClassName("palette");
+				console.log(myElement)
+				$( "ul li" ).draggable({containment: myElement});
+			});
+        </script>
+       
+    </body>
+</html>
